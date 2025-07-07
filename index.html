@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker Logbook</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        h2 {
+            color: #2e3b4e;
+        }
+
+        .container {
+            max-inline-size: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-block-end: 20px;
+        }
+
+        label {
+            margin-block-end: 6px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input, textarea {
+            padding: 8px;
+            font-size: 14px;
+            margin-block-end: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+            block-size: 100px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            inline-size: 100%;
+            border-collapse: collapse;
+            margin-block-start: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: start;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #999;
+        }
+
+        .logbook-container {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Progress Tracker Logbook</h1>
+
+        <form id="progress-form">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required><br>
+
+            <label for="start-time">Start Time:</label>
+            <input type="time" id="start-time" required><br>
+
+            <label for="work-progress">Work Progress:</label>
+            <textarea id="work-progress" required></textarea><br>
+
+            <label for="end-time">End Time:</label>
+            <input type="time" id="end-time" required><br>
+
+            <button type="submit">Add Progress Entry</button>
+        </form>
+
+        <h2>Progress Logbook</h2>
+        <div class="logbook-container">
+            <table id="logbook-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>Work Progress</th>
+                        <th>End Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Logbook entries will be displayed here -->
+                    <tr class="empty-message">
+                        <td colspan="4">Logbook is empty.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="logbook.js"></script>
+
+</body>
+</html>
